@@ -1,0 +1,53 @@
+/* Quantity Control Styles */
+.quantity-section {
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.quantity-section h3 {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    color: white;
+    margin: 0;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: #252525;
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-qty {
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.2s;
+}
+
+.btn-qty:hover {
+    background-color: white;
+    color: var(--primary-color);
+}
+
+#modal-quantity {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white;
+    min-width: 30px;
+    text-align: center;
+}

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOGZILLA | Gourmet Hot Dogs</title>
+    <!-- Google Fonts for Retro Comic Style and Modern Body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Outfit:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">DOGZILLA</div>
+        <ul class="nav-links">
+            <li><a href="#home">Ana Sayfa</a></li>
+            <li><a href="#menu">Menü</a></li>
+            <li><a href="#" id="btn-order-whatsapp" class="btn-primary">Sipariş Ver <span id="cart-count"></span></a>
+            </li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="glitch" data-text="LEZZETİ SERBEST BIRAK">LEZZETİ SERBEST BIRAK</h1>
+            <p class="subtitle">Canavar İştahlar İçin Premium Gurme Sosisliler.</p>
+            <div class="hero-actions">
+                <a href="#menu" class="btn-primary">Menüyü Gör</a>
+                <a href="#about" class="btn-secondary">Daha Fazla Bilgi</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <!-- Hero Slider -->
+            <div class="slider-container hero-slider">
+                <div class="slider-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="slide active">
+                        <img src="images/502403211_17843818911518208_1151664137941882884_n.webp" alt="Dogzilla Hero 1">
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="slide">
+                        <img src="images/506344686_17843714214518208_5840138339913417182_n.webp" alt="Dogzilla Hero 2">
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="slide">
+                        <img src="images/511686867_17843825880518208_4398335957288087136_n.webp" alt="Dogzilla Hero 3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Product Grid Section -->
+    <section id="menu" class="menu-section">
+        <h2 class="section-title"><span class="highlight">CANAVARLAR</span></h2>
+
+        <div class="product-grid">
+            <!-- Product Card 1: Hotzilla -->
+            <div class="product-card">
+                <div class="card-image">
+                    <img src="images/502403211_17843818911518208_1151664137941882884_n.webp" alt="Hotzilla">
+                    <div class="badge">ACILI</div>
+                </div>
+                <div class="card-info">
+                    <h3>HOTZILLA</h3>
+                    <p>Jalapeño sosu, hayalet biber sosu, çıtır soğan.</p>
+                    <div class="price">250 TL</div>
+                    <button class="btn-cart">Sepete Ekle</button>
+                </div>
+            </div>
+
+            <!-- Product Card 2: BBQ Kong -->
+            <div class="product-card">
+                <div class="card-image">
+                    <img src="images/506344686_17843714214518208_5840138339913417182_n.webp" alt="BBQ Kong">
+                </div>
+                <div class="card-info">
+                    <h3>BBQ KONG</h3>
+                    <p>Tütsülenmiş döş, burbon barbekü sosu, lahana salatası.</p>
+                    <div class="price">280 TL</div>
+                    <button class="btn-cart">Sepete Ekle</button>
+                </div>
+            </div>
+
+            <!-- Product Card 3: The Kaiju -->
+            <div class="product-card">
+                <div class="card-image">
+                    <img src="images/511686867_17843825880518208_4398335957288087136_n.webp" alt="The Kaiju">
+                </div>
+                <div class="card-info">
+                    <h3>THE KAIJU</h3>
+                    <p>Wasabi mayonez, zencefil turşusu, nori şeritleri, teriyaki.</p>
+                    <div class="price">260 TL</div>
+                    <button class="btn-cart">Sepete Ekle</button>
+                </div>
+            </div>
+
+            <!-- Product Card 4: Atomic Dog -->
+            <div class="product-card">
+                <div class="card-image">
+                    <!-- User will upload image -->
+                    <div class="image-placeholder">
+                        <span>Resim Yükle<br>(atomic.jpg)</span>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <h3>ATOMIC DOG</h3>
+                    <p>Mac & cheese kaplı, pastırma kırıntıları, acı bal.</p>
+                    <div class="price">240 TL</div>
+                    <button class="btn-cart">Sepete Ekle</button>
+                </div>
+            </div>
+            <!-- Product Card 5: Mecha-Cheese -->
+            <div class="product-card">
+                <div class="card-image">
+                    <!-- User will upload image -->
+                    <div class="image-placeholder">
+                        <span>Resim Yükle<br>(mecha.jpg)</span>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <h3>MECHA-CHEESE</h3>
+                    <p>Üç peynirli karışım, sarımsaklı mayonez, parmesan cipsi.</p>
+                    <div class="price">220 TL</div>
+                    <button class="btn-cart">Sepete Ekle</button>
+                </div>
+            </div>
+
+            <!-- Product Card 6: Swamp Thing -->
+            <div class="product-card">
+                <div class="card-image">
+                    <!-- User will upload image -->
+                    <div class="image-placeholder">
+                        <span>Resim Yükle<br>(swamp.jpg)</span>
+                    </div>
+                    <div class="badge">VEGAN</div>
+                </div>
+                <div class="card-info">
+                    <h3>SWAMP THING</h3>
+                    <p>Bitki bazlı sosis, guacamole, pico de gallo.</p>
+                    <div class="price">270 TL</div>
+                    <button class="btn-cart">Sepete Ekle</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marquee/Ticker -->
+    <div class="ticker-wrap">
+        <div class="ticker">
+            <div class="ticker-item">GURME MALZEMELER • </div>
+            <div class="ticker-item">CANAVAR LEZZET • </div>
+            <div class="ticker-item">PREMIUM SOSİSLER • </div>
+            <div class="ticker-item">EL YAPIMI EKMEKLER • </div>
+            <div class="ticker-item">GURME MALZEMELER • </div>
+            <div class="ticker-item">CANAVAR LEZZET • </div>
+            <div class="ticker-item">PREMIUM SOSİSLER • </div>
+            <div class="ticker-item">EL YAPIMI EKMEKLER • </div>
+            <div class="ticker-item">GURME MALZEMELER • </div>
+            <div class="ticker-item">CANAVAR LEZZET • </div>
+            <div class="ticker-item">PREMIUM SOSİSLER • </div>
+            <div class="ticker-item">EL YAPIMI EKMEKLER • </div>
+            <div class="ticker-item">GURME MALZEMELER • </div>
+            <div class="ticker-item">CANAVAR LEZZET • </div>
+            <div class="ticker-item">PREMIUM SOSİSLER • </div>
+            <div class="ticker-item">EL YAPIMI EKMEKLER • </div>
+            <div class="ticker-item">GURME MALZEMELER • </div>
+            <div class="ticker-item">CANAVAR LEZZET • </div>
+            <div class="ticker-item">PREMIUM SOSİSLER • </div>
+            <div class="ticker-item">EL YAPIMI EKMEKLER • </div>
+            <div class="ticker-item">GURME MALZEMELER • </div>
+            <div class="ticker-item">CANAVAR LEZZET • </div>
+            <div class="ticker-item">PREMIUM SOSİSLER • </div>
+            <div class="ticker-item">EL YAPIMI EKMEKLER • </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="cart-toast">Canavar sepete eklendi! 🌭</div>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="cart-modal-overlay">
+        <div class="cart-modal-content">
+            <div class="cart-header">
+                <h2>SEPETİM</h2>
+                <button id="close-cart" class="close-btn">&times;</button>
+            </div>
+            <div id="cart-items" class="cart-body">
+                <!-- Cart items will be dynamically inserted here -->
+                <div class="empty-cart-msg">Sepetin şu an boş.</div>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>TOPLAM:</span>
+                    <span id="cart-total-price">0 TL</span>
+                </div>
+                <div class="cart-actions">
+                    <button id="btn-clear-cart" class="btn-danger">TÜMÜNÜ SİL</button>
+                    <button id="btn-checkout" class="btn-primary">SİPARİŞİ ONAYLA</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Customization Modal -->
+    <div id="product-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h2 id="modal-product-title">Ürün Adı</h2>
+            <p id="modal-product-price" class="modal-price">0 TL</p>
+
+            <div class="customization-section">
+                <h3>Malzemeler (Çıkarmak istediklerinizi seçin):</h3>
+                <div id="modal-ingredients-list" class="ingredients-list">
+                    <!-- Checkboxes will be injected here -->
+                </div>
+            </div>
+
+            <div class="quantity-section">
+                <h3>Adet:</h3>
+                <div class="quantity-control">
+                    <select id="modal-quantity-select" class="qty-select">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="note-section">
+                <h3>Özel Not:</h3>
+                <textarea id="modal-product-note"
+                    placeholder="Ekstra istekleriniz... (Örn: Bol soslu olsun)"></textarea>
+            </div>
+
+            <div class="modal-actions">
+                <button id="btn-cancel-product" class="btn-danger">İptal</button>
+                <button id="btn-confirm-add" class="btn-primary">Sepete Ekle</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">DOGZILLA</div>
+            <div class="socials">
+                <a href="#">Instagram</a>
+            </div>
+            <p>&copy; 2024 DOGZILLA. Tüm Hakları Saklıdır.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
