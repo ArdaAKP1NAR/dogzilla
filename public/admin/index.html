@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOGZILLA | Admin Panel</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Outfit:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+    <!-- Login Screen -->
+    <div id="login-screen" class="login-screen">
+        <div class="login-card">
+            <div class="login-logo">DOGZILLA</div>
+            <p class="login-subtitle">Admin Panel</p>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-username">Kullanıcı Adı</label>
+                    <input type="text" id="login-username" placeholder="admin" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Şifre</label>
+                    <input type="password" id="login-password" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn-primary btn-full" id="login-btn">Giriş Yap</button>
+                <p id="login-error" class="error-text"></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Panel (hidden until login) -->
+    <div id="admin-panel" class="admin-panel" style="display: none;">
+
+        <!-- Top Bar -->
+        <div class="admin-topbar">
+            <div class="admin-logo">
+                <span class="logo-text">DOGZILLA</span>
+                <span class="admin-badge">ADMIN</span>
+            </div>
+            <div class="topbar-actions">
+                <a href="/" class="btn-link" target="_blank"><i class="fas fa-external-link-alt"></i> Siteyi Gör</a>
+                <button id="btn-logout" class="btn-danger-sm"><i class="fas fa-sign-out-alt"></i> Çıkış</button>
+            </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="admin-tabs">
+            <button class="tab-btn active" data-tab="products"><i class="fas fa-hamburger"></i> Ürünler</button>
+            <button class="tab-btn" data-tab="categories"><i class="fas fa-tags"></i> Kategoriler</button>
+            <button class="tab-btn" data-tab="orders"><i class="fas fa-receipt"></i> Siparişler</button>
+        </div>
+
+        <!-- Tab Content: Products -->
+        <div class="tab-content active" id="tab-products">
+            <div class="admin-layout">
+                <!-- Left: Form -->
+                <div class="admin-form-panel">
+                    <div class="panel-header">
+                        <h2 id="product-form-title"><i class="fas fa-plus-circle"></i> Yeni Ürün Ekle</h2>
+                    </div>
+                    <form id="product-form" class="admin-form">
+                        <input type="hidden" id="product-edit-id" value="">
+
+                        <div class="form-group">
+                            <label for="product-name">Ürün Adı</label>
+                            <input type="text" id="product-name" placeholder="Örn: HOTZILLA" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="product-description">Açıklama (Malzemeler) (İsteğe Bağlı)</label>
+                            <textarea id="product-description" placeholder="Jalapeño sosu, hayalet biber sosu, çıtır soğan."></textarea>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="product-price">Fiyat (TL)</label>
+                                <input type="number" id="product-price" placeholder="250" min="0" step="1" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="product-badge">Badge (Opsiyonel)</label>
+                                <input type="text" id="product-badge" placeholder="ACILI, VEGAN, YENİ...">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="product-category">Kategori</label>
+                                <select id="product-category">
+                                    <option value="">-- Seçiniz --</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="product-sort">Sıra No</label>
+                                <input type="number" id="product-sort" placeholder="0" min="0" value="0">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="product-active">Durum</label>
+                            <select id="product-active">
+                                <option value="true">Aktif</option>
+                                <option value="false">Pasif</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Ürün Görseli</label>
+                            <div class="upload-area" id="upload-area">
+                                <input type="file" id="product-image-file" accept="image/*" hidden>
+                                <div class="upload-placeholder" id="upload-placeholder">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <p>Resim yüklemek için tıklayın</p>
+                                </div>
+                                <img id="upload-preview" class="upload-preview" style="display: none;">
+                            </div>
+                            <input type="hidden" id="product-image-url" value="">
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primary btn-full" id="product-submit-btn">
+                                <i class="fas fa-save"></i> Ürün Ekle
+                            </button>
+                            <button type="button" class="btn-secondary-sm" id="product-cancel-btn" style="display:none;">
+                                <i class="fas fa-times"></i> İptal
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Right: Live Preview -->
+                <div class="admin-preview-panel">
+                    <div class="panel-header">
+                        <h2><i class="fas fa-eye"></i> Canlı Önizleme</h2>
+                    </div>
+                    <div class="preview-container">
+                        <div class="product-card preview-card" id="live-preview-card">
+                            <div class="card-image">
+                                <div class="image-placeholder" id="preview-image-placeholder">
+                                    <span>Resim Yükle</span>
+                                </div>
+                                <img id="preview-image" style="display:none; width:100%; height:100%; object-fit:cover;">
+                                <div class="badge" id="preview-badge" style="display:none;"></div>
+                            </div>
+                            <div class="card-info">
+                                <h3 id="preview-name">ÜRÜN ADI</h3>
+                                <p id="preview-description">Ürün açıklaması burada görünecek...</p>
+                                <div class="price" id="preview-price">0 TL</div>
+                                <button class="btn-cart" disabled>Sepete Ekle</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Products Table -->
+            <div class="admin-table-section">
+                <div class="panel-header">
+                    <h2><i class="fas fa-list"></i> Mevcut Ürünler</h2>
+                </div>
+                <div class="table-responsive">
+                    <table id="products-table" class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Görsel</th>
+                                <th>Ad</th>
+                                <th>Kategori</th>
+                                <th>Fiyat</th>
+                                <th>Badge</th>
+                                <th>Durum</th>
+                                <th>İşlemler</th>
+                            </tr>
+                        </thead>
+                        <tbody id="products-tbody">
+                            <tr><td colspan="8" class="loading-cell">Yükleniyor...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab Content: Categories -->
+        <div class="tab-content" id="tab-categories">
+            <div class="admin-layout">
+                <div class="admin-form-panel">
+                    <div class="panel-header">
+                        <h2 id="category-form-title"><i class="fas fa-plus-circle"></i> Yeni Kategori Ekle</h2>
+                    </div>
+                    <form id="category-form" class="admin-form">
+                        <input type="hidden" id="category-edit-id" value="">
+                        <div class="form-group">
+                            <label for="category-name">Kategori Adı</label>
+                            <input type="text" id="category-name" placeholder="Örn: Hot Dogs" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="category-sort">Sıra No</label>
+                            <input type="number" id="category-sort" placeholder="0" min="0" value="0">
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primary btn-full" id="category-submit-btn">
+                                <i class="fas fa-save"></i> Kategori Ekle
+                            </button>
+                            <button type="button" class="btn-secondary-sm" id="category-cancel-btn" style="display:none;">
+                                <i class="fas fa-times"></i> İptal
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="admin-preview-panel">
+                    <div class="panel-header">
+                        <h2><i class="fas fa-list"></i> Mevcut Kategoriler</h2>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Ad</th>
+                                    <th>Sıra</th>
+                                    <th>İşlemler</th>
+                                </tr>
+                            </thead>
+                            <tbody id="categories-tbody">
+                                <tr><td colspan="4" class="loading-cell">Yükleniyor...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab Content: Orders -->
+        <div class="tab-content" id="tab-orders">
+            <div class="panel-header">
+                <h2><i class="fas fa-receipt"></i> Siparişler</h2>
+            </div>
+            <div class="table-responsive">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tarih</th>
+                            <th>Ürünler</th>
+                            <th>Toplam</th>
+                            <th>Durum</th>
+                            <th>İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody id="orders-tbody">
+                        <tr><td colspan="6" class="loading-cell">Yükleniyor...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+
+</html>

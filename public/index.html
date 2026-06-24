@@ -1,31 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOGZILLA | Gourmet Hot Dogs</title>
-    <!-- Google Fonts for Retro Comic Style and Modern Body -->
+
+    <!-- SEO: Primary Meta Tags -->
+    <title>DOGZILLA | Gourmet Hot Dog Sipariş - Premium Gurme Sosisliler</title>
+    <meta name="description"
+        content="DOGZILLA - Canavar İştahlar İçin Premium Gurme Hot Dog Sipariş. El yapımı ekmekler, özel soslar ve taze malzemelerle hazırlanan gourmet sosisliler. Hemen online sipariş ver!">
+    <meta name="keywords"
+        content="dogzilla, hot dog, gourmet hot dog, sosisli, sipariş, gurme, premium hot dog, online sipariş">
+    <meta name="author" content="DOGZILLA">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://dogzilla.com.tr/">
+    <meta name="theme-color" content="#FF4500">
+
+    <!-- SEO: Open Graph / Facebook -->
+    <meta property="og:type" content="restaurant">
+    <meta property="og:title" content="DOGZILLA | Gourmet Hot Dog Sipariş">
+    <meta property="og:description" content="Canavar İştahlar İçin Premium Gurme Sosisliler. Hemen online sipariş ver!">
+    <meta property="og:url" content="https://dogzilla.com.tr/">
+    <meta property="og:site_name" content="DOGZILLA">
+    <meta property="og:locale" content="tr_TR">
+    <meta property="og:image"
+        content="https://dogzilla.com.tr/images/502403211_17843818911518208_1151664137941882884_n.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- SEO: Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="DOGZILLA | Gourmet Hot Dog Sipariş">
+    <meta name="twitter:description"
+        content="Canavar İştahlar İçin Premium Gurme Sosisliler. Hemen online sipariş ver!">
+    <meta name="twitter:image"
+        content="https://dogzilla.com.tr/images/502403211_17843818911518208_1151664137941882884_n.webp">
+
+    <!-- SEO: Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "DOGZILLA",
+        "description": "Canavar İştahlar İçin Premium Gurme Hot Dog Sipariş",
+        "url": "https://dogzilla.com.tr/",
+        "image": "https://dogzilla.com.tr/images/502403211_17843818911518208_1151664137941882884_n.webp",
+        "servesCuisine": "Gourmet Hot Dog",
+        "priceRange": "₺₺",
+        "menu": "https://dogzilla.com.tr/#menu",
+        "acceptsReservations": false,
+        "hasMenu": {
+            "@type": "Menu",
+            "name": "DOGZILLA Menü",
+            "url": "https://dogzilla.com.tr/#menu"
+        }
+    }
+    </script>
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Outfit:wght@300;400;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
 </head>
 
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="logo">DOGZILLA</div>
+    <nav class="navbar" role="navigation" aria-label="Ana menü">
+        <a href="#home" class="logo" aria-label="DOGZILLA Ana Sayfa">DOGZILLA</a>
         <ul class="nav-links">
             <li><a href="#home">Ana Sayfa</a></li>
             <li><a href="#menu">Menü</a></li>
             <li><a href="#" id="btn-order-whatsapp" class="btn-primary">Sipariş Ver <span id="cart-count"></span></a>
             </li>
         </ul>
-        <div class="hamburger">
+        <div class="hamburger" aria-label="Menüyü aç" role="button" tabindex="0">
             <span></span>
             <span></span>
             <span></span>
@@ -39,24 +95,24 @@
             <p class="subtitle">Canavar İştahlar İçin Premium Gurme Sosisliler.</p>
             <div class="hero-actions">
                 <a href="#menu" class="btn-primary">Menüyü Gör</a>
-                <a href="#about" class="btn-secondary">Daha Fazla Bilgi</a>
+                <a href="#footer" class="btn-secondary">Daha Fazla Bilgi</a>
             </div>
         </div>
         <div class="hero-visual">
             <!-- Hero Slider -->
             <div class="slider-container hero-slider">
                 <div class="slider-wrapper">
-                    <!-- Slide 1 -->
                     <div class="slide active">
-                        <img src="images/502403211_17843818911518208_1151664137941882884_n.webp" alt="Dogzilla Hero 1">
+                        <img src="images/502403211_17843818911518208_1151664137941882884_n.webp"
+                            alt="DOGZILLA Hotzilla - Acılı gourmet hot dog jalapeño sosu ile" loading="eager">
                     </div>
-                    <!-- Slide 2 -->
                     <div class="slide">
-                        <img src="images/506344686_17843714214518208_5840138339913417182_n.webp" alt="Dogzilla Hero 2">
+                        <img src="images/506344686_17843714214518208_5840138339913417182_n.webp"
+                            alt="DOGZILLA BBQ Kong - Tütsülenmiş barbekü hot dog" loading="lazy">
                     </div>
-                    <!-- Slide 3 -->
                     <div class="slide">
-                        <img src="images/511686867_17843825880518208_4398335957288087136_n.webp" alt="Dogzilla Hero 3">
+                        <img src="images/511686867_17843825880518208_4398335957288087136_n.webp"
+                            alt="DOGZILLA The Kaiju - Japon tarzı wasabi hot dog" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -65,95 +121,11 @@
 
     <!-- Product Grid Section -->
     <section id="menu" class="menu-section">
-        <h2 class="section-title"><span class="highlight">CANAVARLAR</span></h2>
-
-        <div class="product-grid">
-            <!-- Product Card 1: Hotzilla -->
-            <div class="product-card">
-                <div class="card-image">
-                    <img src="images/502403211_17843818911518208_1151664137941882884_n.webp" alt="Hotzilla">
-                    <div class="badge">ACILI</div>
-                </div>
-                <div class="card-info">
-                    <h3>HOTZILLA</h3>
-                    <p>Jalapeño sosu, hayalet biber sosu, çıtır soğan.</p>
-                    <div class="price">250 TL</div>
-                    <button class="btn-cart">Sepete Ekle</button>
-                </div>
-            </div>
-
-            <!-- Product Card 2: BBQ Kong -->
-            <div class="product-card">
-                <div class="card-image">
-                    <img src="images/506344686_17843714214518208_5840138339913417182_n.webp" alt="BBQ Kong">
-                </div>
-                <div class="card-info">
-                    <h3>BBQ KONG</h3>
-                    <p>Tütsülenmiş döş, burbon barbekü sosu, lahana salatası.</p>
-                    <div class="price">280 TL</div>
-                    <button class="btn-cart">Sepete Ekle</button>
-                </div>
-            </div>
-
-            <!-- Product Card 3: The Kaiju -->
-            <div class="product-card">
-                <div class="card-image">
-                    <img src="images/511686867_17843825880518208_4398335957288087136_n.webp" alt="The Kaiju">
-                </div>
-                <div class="card-info">
-                    <h3>THE KAIJU</h3>
-                    <p>Wasabi mayonez, zencefil turşusu, nori şeritleri, teriyaki.</p>
-                    <div class="price">260 TL</div>
-                    <button class="btn-cart">Sepete Ekle</button>
-                </div>
-            </div>
-
-            <!-- Product Card 4: Atomic Dog -->
-            <div class="product-card">
-                <div class="card-image">
-                    <!-- User will upload image -->
-                    <div class="image-placeholder">
-                        <span>Resim Yükle<br>(atomic.jpg)</span>
-                    </div>
-                </div>
-                <div class="card-info">
-                    <h3>ATOMIC DOG</h3>
-                    <p>Mac & cheese kaplı, pastırma kırıntıları, acı bal.</p>
-                    <div class="price">240 TL</div>
-                    <button class="btn-cart">Sepete Ekle</button>
-                </div>
-            </div>
-            <!-- Product Card 5: Mecha-Cheese -->
-            <div class="product-card">
-                <div class="card-image">
-                    <!-- User will upload image -->
-                    <div class="image-placeholder">
-                        <span>Resim Yükle<br>(mecha.jpg)</span>
-                    </div>
-                </div>
-                <div class="card-info">
-                    <h3>MECHA-CHEESE</h3>
-                    <p>Üç peynirli karışım, sarımsaklı mayonez, parmesan cipsi.</p>
-                    <div class="price">220 TL</div>
-                    <button class="btn-cart">Sepete Ekle</button>
-                </div>
-            </div>
-
-            <!-- Product Card 6: Swamp Thing -->
-            <div class="product-card">
-                <div class="card-image">
-                    <!-- User will upload image -->
-                    <div class="image-placeholder">
-                        <span>Resim Yükle<br>(swamp.jpg)</span>
-                    </div>
-                    <div class="badge">VEGAN</div>
-                </div>
-                <div class="card-info">
-                    <h3>SWAMP THING</h3>
-                    <p>Bitki bazlı sosis, guacamole, pico de gallo.</p>
-                    <div class="price">270 TL</div>
-                    <button class="btn-cart">Sepete Ekle</button>
-                </div>
+        <!-- Products will be dynamically loaded here -->
+        <div class="product-grid" id="product-grid">
+            <div class="loading-spinner">
+                <div class="spinner"></div>
+                <p>Menü yükleniyor...</p>
             </div>
         </div>
     </section>
@@ -163,27 +135,27 @@
         <div class="ticker">
             <div class="ticker-item">GURME MALZEMELER • </div>
             <div class="ticker-item">CANAVAR LEZZET • </div>
-            <div class="ticker-item">PREMIUM SOSİSLER • </div>
+            <div class="ticker-item">PREMİUM SOSİSLER • </div>
             <div class="ticker-item">EL YAPIMI EKMEKLER • </div>
             <div class="ticker-item">GURME MALZEMELER • </div>
             <div class="ticker-item">CANAVAR LEZZET • </div>
-            <div class="ticker-item">PREMIUM SOSİSLER • </div>
+            <div class="ticker-item">PREMİUM SOSİSLER • </div>
             <div class="ticker-item">EL YAPIMI EKMEKLER • </div>
             <div class="ticker-item">GURME MALZEMELER • </div>
             <div class="ticker-item">CANAVAR LEZZET • </div>
-            <div class="ticker-item">PREMIUM SOSİSLER • </div>
+            <div class="ticker-item">PREMİUM SOSİSLER • </div>
             <div class="ticker-item">EL YAPIMI EKMEKLER • </div>
             <div class="ticker-item">GURME MALZEMELER • </div>
             <div class="ticker-item">CANAVAR LEZZET • </div>
-            <div class="ticker-item">PREMIUM SOSİSLER • </div>
+            <div class="ticker-item">PREMİUM SOSİSLER • </div>
             <div class="ticker-item">EL YAPIMI EKMEKLER • </div>
             <div class="ticker-item">GURME MALZEMELER • </div>
             <div class="ticker-item">CANAVAR LEZZET • </div>
-            <div class="ticker-item">PREMIUM SOSİSLER • </div>
+            <div class="ticker-item">PREMİUM SOSİSLER • </div>
             <div class="ticker-item">EL YAPIMI EKMEKLER • </div>
             <div class="ticker-item">GURME MALZEMELER • </div>
             <div class="ticker-item">CANAVAR LEZZET • </div>
-            <div class="ticker-item">PREMIUM SOSİSLER • </div>
+            <div class="ticker-item">PREMİUM SOSİSLER • </div>
             <div class="ticker-item">EL YAPIMI EKMEKLER • </div>
         </div>
     </div>
@@ -199,7 +171,6 @@
                 <button id="close-cart" class="close-btn">&times;</button>
             </div>
             <div id="cart-items" class="cart-body">
-                <!-- Cart items will be dynamically inserted here -->
                 <div class="empty-cart-msg">Sepetin şu an boş.</div>
             </div>
             <div class="cart-footer">
@@ -259,14 +230,36 @@
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer>
+    <footer id="footer" role="contentinfo">
         <div class="footer-content">
-            <div class="footer-logo">DOGZILLA</div>
-            <div class="socials">
-                <a href="#">Instagram</a>
+            <div class="footer-main">
+                <div class="footer-left">
+                    <div class="footer-logo">DOGZILLA</div>
+                    <div class="socials">
+                        <a href="https://www.instagram.com/hot.dogzilla/" id="footer-insta-link"
+                            aria-label="DOGZILLA Instagram sayfası" rel="noopener noreferrer"><i
+                                class="fab fa-instagram" style="font-size: 1.2rem; margin-right: 5px;"></i>
+                            Instagram</a>
+                    </div>
+                </div>
+
+                <div class="footer-right">
+                    <div class="footer-map">
+                        <iframe src="https://maps.google.com/maps?q=36.4150713,35.8962197&z=17&output=embed"
+                            width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    <a href="https://www.google.com/maps/place/DOGZ%C4%B0LLA/@36.4150713,35.8936448,17z/data=!3m1!4b1!4m6!3m5!1s0x15260954c7f5504d:0xe5a2625b038721ae!8m2!3d36.4150713!4d35.8962197!16s%2Fg%2F11xkz48df9?authuser=0&entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D"
+                        target="_blank" class="map-link" id="footer-map-link">
+                        <i class="fas fa-external-link-alt"></i> Haritalarda Aç
+                    </a>
+                </div>
             </div>
-            <p>&copy; 2024 DOGZILLA. Tüm Hakları Saklıdır.</p>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 DOGZILLA. Tüm Hakları Saklıdır. Designed by <a href="https://ardaakpinar.com.tr/" target="_blank" rel="noopener noreferrer" style="color: var(--primary-color); text-decoration: none; font-weight: bold; transition: color 0.3s ease;">Arda AKPINAR</a></p>
+            </div>
         </div>
     </footer>
 
